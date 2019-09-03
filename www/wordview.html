@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="description" content="قاموس الاشارة اليمني">
+	<meta name="author" content="Khalid Dhafir">
+    <title>قاموس الاشارة اليمني</title>
+
+	<!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    
+</head>
+
+<body style="padding-top: 60px;">
+<!--Navbar Start-->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">قاموس الإشارة اليمني</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="active"><a href="index.html">القاموس</a></li>
+        <li><a href="catbrowser.html">تصفح الموضوعات </a></li>
+        <li><a href="updatedb.html">تحديث البيانات</a></li>
+        <li><a href="about.html">عن البرنامج</a></li>
+      </ul>
+      <!--<ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul> -->
+    </div>
+  </div>
+</nav> 
+<!-- Navbar Ends-->
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12">
+      <a class="btn btn-default" href="./index.html"> عودة الى الرئيسية </a><br>
+      <table class="table">
+        <tr>
+          <td width="30%">الكلمة بالعربي</td><td id="wordinarabic"></td>
+        </tr>
+        <tr>
+            <td>الكلمة بالانجليزي</td><td id="wordinenglish"></td>
+          </tr>
+      </table>
+      <hr>
+      <div id="wordpic"></div><br>
+      <button class="btn" onclick="playPause()">تشغيل / ايقاف</button>
+      <button class="btn" onclick="loopVid()"> تكرار </button><br>
+
+      <div id="videolink"></div><br>
+    </div>
+  </div>
+</div>
+    <footer class="footer">
+        <center>القاموس الاشاري اليمني 2019 - &copy;</center>
+      </footer> 
+  <!-- jQuery -->
+  <script src="js/jquery.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script src="js/bootstrap.min.js"></script>
+  <!-- Application JavaScript -->
+  <script src="js/main.js"></script>
+  <script>
+    var varArr = decodeURI(window.location.href).split('&&');
+    var wordinarabic = varArr[varArr.length -1];
+    var wordpic = varArr[varArr.length - 2];
+    //var wordfile = varArr[varArr.length -3]; //http://www.ysldictionary.com/videos/apps/facebook.mp4
+    var wordinenglish = varArr[varArr.length -3];
+    var videolink = "<video id=\"video1\" width=\"100%\" height=\"auto\" controls><source src=\"http://www.ysldictionary.com/videos/countries/"+ wordinenglish +".mp4\" type=\"video/mp4\">  Your browser does not support the video tag.</video>";
+
+    document.getElementById('wordinarabic').innerHTML = wordinarabic;
+    document.getElementById('wordinenglish').innerHTML = wordinenglish;
+    //document.getElementById('wordpic').innerHTML = wordpic;
+    document.getElementById('videolink').innerHTML = videolink;
+
+    var myVideo = document.getElementById("video1"); 
+
+    function playPause() { 
+      if (myVideo.paused) 
+        myVideo.play(); 
+      else 
+        myVideo.pause(); 
+    }
+    function loopVid() { 
+      if (myVideo.loop) 
+        myVideo.loop = false; 
+      else 
+        myVideo.loop = true; 
+    } 
+
+
+  </script>
+    </body>
+</html>
