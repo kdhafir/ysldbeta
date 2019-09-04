@@ -27,8 +27,7 @@
   <allow-intent href="https://*/*" />
   <gap:plugin name="cordova-plugin-geolocation" source="npm" />
   <gap:plugin name="cordova-plugin-whitelist" version="1.1.0" source="npm" />
-  <plugin name="cordova-plugin-file" spec="~6.0.2" />
-  <plugin name="cordova-plugin-file-transfer" spec="~1.7.1" />
+  <gap:plugin name="com.dawsonloudon.videoplayer" version="1.0.0" />
    
   <icon platform="android" src="package-assets/48.png" density="mdpi" width="48" height="48"/>
   <icon platform="android" src="package-assets/72.png" density="hdpi" width="72" height="72"/>
