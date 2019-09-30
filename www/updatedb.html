@@ -53,6 +53,7 @@
           Your browser does not support the video tag.
           </video> 
         </div>
+        
     </div>
     </div>
     <footer class="footer">
@@ -66,5 +67,19 @@
   <script src="js/download.js"></script>
   <!-- Application JavaScript -->
   <script src="js/main.js"></script>
+  <script>
+  var fileTransfer = new FileTransfer();
+fileTransfer.download(
+    "http://developer.android.com/assets/images/home/ics-android.png",
+    "file://sdcard/ics-android.png",
+    function(entry) {
+        alert("download complete: " + entry.fullPath);
+    },
+    function(error) {
+        alert("download error source " + error.source);
+        alert("download error target " + error.target);
+        alert("upload error code" + error.code);
+    });
+  </script>
     </body>
 </html>
