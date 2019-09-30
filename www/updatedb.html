@@ -52,6 +52,12 @@
           Your browser does not support the video tag.
           </video> 
         </div>
+        <div id="mp">
+<a href="#" class="btn" onclick="downloadMediaFile()">تحميل</a>
+        </div>
+        <div id="log">
+
+        </div>
         
     </div>
     </div>
@@ -81,8 +87,18 @@ fileTransfer.download(
         alert("upload error code" + error.code);
     });
     */
-    downloader.init({folder: "mediafiles"});
-    downloader.get("http://www.ysldictionary.com/videos/countries/afghanistan.mp4");
+    function downloadMediaFile(){
+      
+      downloader.init({folder: "mediafiles"});
+      downloader.get("http://www.ysldictionary.com/videos/countries/afghanistan.mp4");
+    }
+document.addEventListener('DOWNLOADER_downloadProgress', (event: any) => {
+  let data = event.data;
+  document.getElementById('log').innerHTML += data;
+  console.log(data);
+})
+    
+    
   </script>
     </body>
 </html>
