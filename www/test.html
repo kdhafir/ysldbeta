@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="description" content="قاموس الاشارة اليمني">
+	<meta name="author" content="Khalid Dhafir">
+    <title>قاموس الاشارة اليمني</title>
+
+	<!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    
+</head>
+
+<body style="padding-top: 60px;">
+<!--Navbar Start-->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">قاموس الإشارة اليمني</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="index.html">القاموس</a></li>
+        <li><a href="catbrowser.html">تصفح الموضوعات </a></li>
+        <li class="active"><a href="updatedb.html">تحديث البيانات</a></li>
+        <li><a href="about.html">عن البرنامج</a></li>
+        <li><a href="test.html">test</a></li>
+      </ul>
+      <!--<ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul> -->
+    </div>
+    
+  </div>
+</nav> 
+<!-- Navbar Ends-->
+    <div class="container">
+	<div class="row">
+		<div class="col-sm-12 text-center">
+                <div id="mp">
+                    <a href="#" class="btn" onclick="downloadMediaFile()">تحميل</a>
+                    <hr>
+                </div>
+            <div id="log">
+                        
+            </div>
+        </div>
+    </div>
+    </div>
+
+<script>
+
+document.addEventListener('DOWNLOADER_downloadProgress', (event: any) => {
+  let data = event.data;
+  document.getElementById('log').innerHTML += data;
+  console.log(data);
+})
+function downloadMediaFile(){
+      downloader.init({folder: "mediafiles"});
+      downloader.get("http://www.ysldictionary.com/videos/countries/afghanistan.mp4");
+    }
+</script>
+    </body>
+</html>
