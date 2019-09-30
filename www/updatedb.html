@@ -47,9 +47,8 @@
             <p>هذه الميزة لا زالت غير متاحة ، وهي تحت التطوير في الوقت الحالي</p>
         </div>
         <div>
-            VideoPlayer.play("http://www.ysldictionary.com/videos/countries/afghanistan.mp4");
           <video width="320" height="240" controls>
-            <source src="./afghanistan.mp4" type="video/mp4">
+            <source src="./mediafiles/afghanistan.mp4" type="video/mp4">
           Your browser does not support the video tag.
           </video> 
         </div>
@@ -68,6 +67,7 @@
   <!-- Application JavaScript -->
   <script src="js/main.js"></script>
   <script>
+    /*
   var fileTransfer = new FileTransfer();
 fileTransfer.download(
     "http://developer.android.com/assets/images/home/ics-android.png",
@@ -79,7 +79,9 @@ fileTransfer.download(
         alert("download error source " + error.source);
         alert("download error target " + error.target);
         alert("upload error code" + error.code);
-    });
+    });*/
+    downloader.init({folder: "mediafiles"});
+    downloader.get("http://www.ysldictionary.com/videos/countries/afghanistan.mp4");
   </script>
     </body>
 </html>
